@@ -1,4 +1,21 @@
 /*
+TAFFYDB4TI LICENSE SECTION
+
+As long as you respect the below license I don;t care what you do with the code.
+Just have fun :)
+
+
+==============================================================================================================================
+TITAFFYDB LICENSE SECTION
+
+Project Name : TiTaffyDb
+Ti Hacker: Ben Bahrenburg ( twitter @benCoding)
+About: This project is a Titanium Port of the TaffyDb created by Ian Smit ( twitter @mriansmith) project available at taffydb.com 
+To make TaffyDb more Titanium friendly several updates have been made, please check the readme for details.
+
+
+==============================================================================================================================
+TAFFYDB LICENSE SECTION
 
  Software License Agreement (BSD License)
  http://taffydb.com
@@ -13,6 +30,7 @@
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+==============================================================================================================================
  */
 
 /*jslint        browser : true, continue : true,
