@@ -1862,14 +1862,23 @@ exports.taffy = function(dbName, settings) {
 			return
 		};
 	
-		var db;
-		var parent = Ti.Filesystem.applicationDataDirectory;
-		var taffFolder = Ti.Filesystem.getFile(parent, 'titaffydb');
-		if(!taffFolder.exists()){
-		  taffFolder.createDirectory();
-		}
+		var db, taffFolder;
 		
-		var taffFolder = parent + 'titaffydb';			
+		if (settings && settings.taffFolder){
+			taffFolder = settings.taffFolder;
+		} else {
+			var parent =  (settings && settings.taffParentFolder) ? settings.taffParentFolder : Ti.Filesystem.applicationDataDirectory;
+			if (parent.charAt( parent.length-1 )!== "/") {
+				parent = parent + '/';
+			}
+			taffFolder = Ti.Filesystem.getFile(parent, 'titaffydb');
+			if (!taffFolder.exists()){
+				taffFolder.createDirectory();
+			}
+		
+			taffFolder = parent + 'titaffydb';			
+		}
+			
 		var taffyFile = Ti.Filesystem.getFile(taffFolder, dbName.toUpperCase());
 
 		if(taffyFile.exists()){
