@@ -50,6 +50,24 @@ my_db.insert({my_value:'second'});
 my_db.save();
 
 ```
+
+#####Save location - taffFolder and taffParentFolder.
+By default, **save()** will write the files to **Ti.Filesystem.applicationDataDirectory/titaffydb**.  You can specify a full directory path with **taffFolder** or simply choose to keep the **titaffydb** directory name but select a differnt parent with **taffParentFolder**.  This is useful if your database is a cache and you want it to live, for instance, in **Ti.Filesystem.applicationCacheDirectory**.
+
+These two properties can be set through the settings when instanciating a taffy db.
+
+```
+var taffy = (require('/taffydb4ti').taffy;
+
+var my_db = new taffy('my_db_store_name',{ taffParentFolder: Ti.Filesystem.applicationCacheDirectory });
+
+my_db.insert({my_value:'first'});
+my_db.insert({my_value:'second'});
+
+my_db.save();
+
+```
+
 #####Create a database - autocommit
 This setting will autosave each change you are doing to the database. While handy, if you have many operation on the the db I suggest not to use it and call **db.save()** yourself.
 Of course **autocommit** can be used together with taffy settings.
