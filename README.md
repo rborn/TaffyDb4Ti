@@ -68,6 +68,20 @@ my_db.save();
 
 ```
 
+#####Removing a database file
+When using TaffyDb as a cache, it may be useful to be able to remove the cache.  Calling **removeFile** will delete the file from the filesystem based on either the default configuration information or the one passed via settings.  This is a convenience function, so that you don't have to know the internals of how TiTaffyDb stores the file.  But you can, of course, do it directly using **Ti.Filesystem.File** functions.
+
+PLEASE NOTE that the **removeFile()** function operates on the file system but for consistency sake will also purge the actual in-memeory content.  So, calling **save()** immediately after **removeFile()** results in an empty file.  Should you want, you can prevent the purge by calling **removeFile(false)**.
+
+```
+var taffy = (require('/taffydb4ti').taffy;
+
+var my_db = new taffy('my_db_store_name',{autocommit:true});
+...
+my_db.removeFile(); // and purges the records
+
+```
+
 #####Create a database - autocommit
 This setting will autosave each change you are doing to the database. While handy, if you have many operation on the the db I suggest not to use it and call **db.save()** yourself.
 Of course **autocommit** can be used together with taffy settings.

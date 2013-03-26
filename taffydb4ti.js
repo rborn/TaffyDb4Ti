@@ -1900,7 +1900,23 @@ exports.taffy = function(dbName, settings) {
 
 		db.settings(settings||null);
 		db.save =  function() {
-			taffyFile.write(JSON.stringify(db().get()));
+			return taffyFile.write(JSON.stringify(db().get()));
+		};
+		db.removeFile = function() {
+			var done = false, purgeDb = arguments.length > 0 ? arguments[0] : true ;
+			try {
+				if(taffyFile.exists()){
+					done = taffyFile.deleteFile();
+Ti.API.error("purgedb", purgeDb);
+					if (done && purgeDb) {
+						db().remove();
+					}
+				}
+			} catch (err) {
+				Ti.API.error('TaffyDb File Removal  Error: ' + err);
+				throw "Invalid TaffyDb file operation";
+			}
+			return done;
 		};
 
 		if (settings && settings.autocommit) {
