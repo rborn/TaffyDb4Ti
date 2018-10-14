@@ -8,7 +8,7 @@ TaffyDb4Ti
 and to [Ian Smith](http://www.taffydb.com/) for the great TaffyDB library.
 
 
-The current version of TiTaffyDb has a bug (I think the bug is in the older version of TaffyDB used by this module) that doesn't allow multiple dbs in the same module. There are query caching optimizations that make the data to be overwriten for the same query on two different dbs.
+The current version of TiTaffyDb has a bug (I think the bug is in the older version of TaffyDB used by this module) that doesn't allow multiple dbs in the same module. There are query caching optimizations that cause the data to be overwriten for the same query on two different dbs.
 
 How the TiTaffyDb implementation goes deep integrated into TaffyDb, a simple update to the latest version was too much for me (I'm too lazy) so I **stole** some code from Ben and created a simpler wrapper for TaffyDb.
 
@@ -16,7 +16,7 @@ The syntax is cleaner (in my opinion) and the update to a future version of Taff
 
 ####TODO
 - Right now the only storage method is to a file. I will add, maybe :), storing to properties. 
-- I tested it only on iOs, but the Ben's version was working just fine on Android so I see no reason why this version wouldn't. Anyway, I'll run some test and update this howto.
+- I tested it only on iOs, but Ben's version was working just fine on Android so I see no reason why this version wouldn't. Anyway, I'll run some tests and update this howto.
 
 
 ####How to
@@ -52,7 +52,7 @@ my_db.save();
 ```
 
 #####Save location - taffFolder and taffParentFolder.
-By default, **save()** will write the files to **Ti.Filesystem.applicationDataDirectory/titaffydb**.  You can specify a full directory path with **taffFolder** or simply choose to keep the **titaffydb** directory name but select a differnt parent with **taffParentFolder**.  This is useful if your database is a cache and you want it to live, for instance, in **Ti.Filesystem.applicationCacheDirectory**.
+By default, **save()** will write the files to **Ti.Filesystem.applicationDataDirectory/titaffydb**.  You can specify a full directory path with **taffFolder** or simply choose to keep the **titaffydb** directory name but select a different parent with **taffParentFolder**. This is useful if your database is a cache and you want it to live, for instance, in **Ti.Filesystem.applicationCacheDirectory**.
 
 These two properties can be set through the settings when instanciating a taffy db.
 
@@ -69,7 +69,7 @@ my_db.save();
 ```
 
 #####Create a database - autocommit
-This setting will autosave each change you are doing to the database. While handy, if you have many operation on the the db I suggest not to use it and call **db.save()** yourself.
+This setting will autosave each change you are doing to the database. While handy, if you have many operations on the db I suggest not to use it and call **db.save()** yourself.
 Of course **autocommit** can be used together with taffy settings.
 
 ```
